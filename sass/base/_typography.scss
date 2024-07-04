@@ -1,0 +1,77 @@
+@import"../abstracts/mixins";
+
+body{
+    font-family: 'Lato',sans-serif;
+    color: #777;
+    line-height: 1.7;
+    font-size: 16px;
+    font-weight: 400;
+    padding: 3rem;
+    @include respond(tab-port){
+    padding: 0;
+        
+    }
+}
+.heading-primary{
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 400px;
+    backface-visibility: hidden;
+    &-main{
+        font-size: 60px;
+        display: block;
+        letter-spacing: 35px;
+        animation-name: MoveInLeft;
+        animation-duration: 1s;
+        animation-timing-function: ease-out;
+        @include respond(phone){
+            letter-spacing: 1rem;
+            font-size: 30px;
+        }
+        }
+        &-sub{
+        font-size: 20px;
+        display: block;
+        letter-spacing: 17.4px;
+        animation-name: MoveInRight;
+        animation-duration: 1s;
+        animation-timing-function: ease-in;
+        @include respond(phone){
+            letter-spacing: .5rem;
+        }
+        }
+      
+}
+.heading-secondary{
+font-size: 2.5rem;
+text-transform: uppercase;
+font-weight: 700;
+display: inline-block;
+background-image:linear-gradient(to right ,#7ed56f,#28b485);
+-webkit-background-clip: text;
+background-clip: text;
+color: transparent;
+letter-spacing: .2rem;
+transition: all .2s;
+@include respond(tab-port){
+  font-size: 3.5rem;
+}
+@include respond(phone){
+    font-size: 3rem;
+  }
+&:hover{
+    transform: skewY(2deg) skewX(15deg) scale(1.1);
+    text-shadow: .5rem 1rem 2rem rgba($color: #000000, $alpha: 1.0);
+}
+}
+.heading-tertiary{
+    font-size:1.3rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.paragraph{
+    font-size:1.3rem;
+   &:not(:last-child){
+    margin-bottom: 3rem;
+   } 
+}
